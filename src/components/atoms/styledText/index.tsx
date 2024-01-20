@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleProp, TextStyle, ViewStyle} from 'react-native';
-import {COLORS, FONTS, FONT_SIZE} from '../../../constants';
+import {COLORS, FONTS, FONT_SIZE} from '../../../constants/theme';
 
 interface StyleTextProps {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ const StyledText: React.FC<StyleTextProps> = ({
   onLayout,
   variant = 'regular',
   size = FONT_SIZE.MD,
-  color = COLORS.PRIMARY,
+  color = COLORS.BLACK,
   lineHeight,
   textStyle,
   textAlign = 'left',

@@ -1,5 +1,5 @@
 export default {
-    AUTH: {
-        WELCOME_SCREEN: 'Auth-WelcomeScreen'
-    }
+  AUTH: {
+    TERMS_AND_CONDITIONS_SCREEN: 'Auth-TermsAndConditionsScreen',
+  },
 };

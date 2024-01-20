@@ -1,1 +1,1 @@
-export { default as WelcomeScreen } from './welcomeScreen';
+export {default as TermsAndConditionsScreen} from './termsAndConditionsScreen';

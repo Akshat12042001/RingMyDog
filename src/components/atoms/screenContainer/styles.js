@@ -3,7 +3,7 @@ import {COLORS} from '../../../constants';
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: COLORS.LIGHT,
+    backgroundColor: COLORS.PRIMARY,
   },
 });
 
