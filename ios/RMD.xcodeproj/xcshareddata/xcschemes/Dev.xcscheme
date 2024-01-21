@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
-   version = "1.3">
+   LastUpgradeVersion = "1420"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;echo &quot;.env.dev&quot; &gt; /tmp/envfile&#10;"
+               shellToInvoke = "/bin/sh">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+                     BuildableName = "RMD.app"
+                     BlueprintName = "RMD"
+                     ReferencedContainer = "container:RMD.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -15,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "RingMyDog.app"
-               BlueprintName = "RingMyDog"
-               ReferencedContainer = "container:RingMyDog.xcodeproj">
+               BuildableName = "RMD.app"
+               BlueprintName = "RMD"
+               ReferencedContainer = "container:RMD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,16 +47,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "RingMyDogTests.xctest"
-               BlueprintName = "RingMyDogTests"
-               ReferencedContainer = "container:RingMyDog.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -55,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "RingMyDog.app"
-            BlueprintName = "RingMyDog"
-            ReferencedContainer = "container:RingMyDog.xcodeproj">
+            BuildableName = "RMD.app"
+            BlueprintName = "RMD"
+            ReferencedContainer = "container:RMD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +81,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "RingMyDog.app"
-            BlueprintName = "RingMyDog"
-            ReferencedContainer = "container:RingMyDog.xcodeproj">
+            BuildableName = "RMD.app"
+            BlueprintName = "RMD"
+            ReferencedContainer = "container:RMD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -12,6 +12,7 @@ export const COLORS = {
   SECONDARY: '#5C2508',
   WHITE: 'white',
   GREY: 'grey',
+  GREEN: 'green',
 };
 
 export const FONT_SIZE = {
