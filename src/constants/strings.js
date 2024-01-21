@@ -1,0 +1,12 @@
+export default {
+  TERMS_AND_CONDITIONS_SCREEN: {
+    TITLE: 'TERMS & CONDITIONS / PRIVACY POLICY',
+    ACCEPT_TERMS: 'Accept Terms & Conditions / Privacy Policy',
+  },
+  BUTTON_LABELS: {
+    NEXT: 'NEXT',
+  },
+  INFORMATION_SCREEN: {
+    TITLE: 'INFORMATION ABOUT\nRING MY DOG - THE WANTED DOG POSTER APP',
+  },
+};

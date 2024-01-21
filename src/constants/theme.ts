@@ -9,6 +9,9 @@ const {height, width} = Dimensions.get('window');
 export const COLORS = {
   PRIMARY: '#F9AC02',
   BLACK: 'black',
+  SECONDARY: '#5C2508',
+  WHITE: 'white',
+  GREY: 'grey',
 };
 
 export const FONT_SIZE = {

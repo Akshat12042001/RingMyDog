@@ -1,9 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {COLORS} from '../../../constants';
+import {COLORS, SCREEN_PADDING} from '../../../constants';
 
 const styles = StyleSheet.create({
   background: {
     backgroundColor: COLORS.PRIMARY,
+    paddingHorizontal: SCREEN_PADDING,
   },
 });
 
