@@ -7,17 +7,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imageStyles: {
-    height: 200,
-    width: 250,
+    height: 150,
+    width: 200,
+    resizeMode: 'contain',
   },
   text: {
     fontWeight: '700',
+    marginTop: SCREEN_PADDING,
   },
   dummyView: {
     width: '100%',
     height: 1,
     backgroundColor: COLORS.SECONDARY,
-    marginTop: SCREEN_PADDING,
+    marginTop: 10,
   },
 });
 export default styles;

@@ -21,7 +21,7 @@ const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(loginRequest.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.isLoggedIn = true;
       })
       .addCase(loginRequest.rejected, (state, action) => {
         state.isLoading = false;
@@ -31,6 +31,7 @@ const authSlice = createSlice({
       })
       .addCase(logoutRequest.fulfilled, (state, action) => {
         state.isLoading = false;
+        state.isLoggedIn = false;
       })
       .addCase(logoutRequest.rejected, (state, action) => {
         state.isLoading = false;

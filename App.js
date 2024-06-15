@@ -6,6 +6,7 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {StyledText} from './src/components/atoms';
 import SplashScreen from 'react-native-splash-screen';
+import FlashMessage from 'react-native-flash-message';
 
 const App = () => {
   const store = getStore();
@@ -27,6 +28,7 @@ const App = () => {
           loading={<StyledText>Loading...</StyledText>}
           persistor={persistor}
           onBeforeLift={onBeforeLift}>
+          <FlashMessage />
           <AppNavigator />
         </PersistGate>
       </Provider>

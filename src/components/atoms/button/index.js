@@ -9,6 +9,7 @@ const Button = ({
   containerStyles = {},
   onPress,
   isDisabled = false,
+  textColor = '',
 }) => {
   return (
     <TouchableOpacity
@@ -18,7 +19,9 @@ const Button = ({
         {backgroundColor: isDisabled ? COLORS.GREY : COLORS.SECONDARY},
       ]}
       onPress={isDisabled ? undefined : onPress}>
-      <StyledText color={COLORS.WHITE} textStyle={{fontWeight: '500'}}>
+      <StyledText
+        color={!!textColor ? textColor : COLORS.WHITE}
+        textStyle={{fontWeight: '500'}}>
         {title}
       </StyledText>
     </TouchableOpacity>

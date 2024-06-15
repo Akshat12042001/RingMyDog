@@ -51,4 +51,10 @@ export default StyleSheet.create({
       height: 4,
     },
   },
+  hitSlop10: {
+    top: 10,
+    bottom: 10,
+    left: 10,
+    right: 10,
+  },
 });

@@ -13,6 +13,10 @@ export const COLORS = {
   WHITE: 'white',
   GREY: 'grey',
   GREEN: 'green',
+  RED: '#DF3A01',
+  LIGHT_YELLOW: '#B7792F',
+  BORDER: '#C28D2F',
+  BACKGROUND: '#FED990',
 };
 
 export const FONT_SIZE = {

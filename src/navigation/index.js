@@ -6,6 +6,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import config from './config';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Linking, Platform} from 'react-native';
+import {connect} from 'react-redux';
+import DrawerNavigator from './drawer/drawerNavigator';
+import {NAVIGATION} from '../constants';
 
 const Stack = createStackNavigator();
 
@@ -46,6 +49,7 @@ class AppNavigator extends React.Component {
   };
 
   render() {
+    console.log(this.props.isLoggedIn);
     const {initialState, isReady} = this.state;
     if (!isReady) return null;
     return (
@@ -56,11 +60,19 @@ class AppNavigator extends React.Component {
         }
         ref={ref => NavigationService.setNavigatorRef(ref)}>
         <Stack.Navigator screenOptions={config}>
-          <Stack.Screen name="Auth" component={AuthenticationStack} />
+          <Stack.Screen
+            name={NAVIGATION.STACK.AUTH}
+            component={
+              !!this.props?.isLoggedIn ? DrawerNavigator : AuthenticationStack
+            }
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );
   }
 }
 
-export default AppNavigator;
+const mapStateToProps = state => ({
+  isLoggedIn: state?.auth?.isLoggedIn,
+});
+export default connect(mapStateToProps)(AppNavigator);

@@ -3,13 +3,15 @@ import {SCREEN} from '../../../constants';
 
 const styles = StyleSheet.create({
   buttonContainer: {
+    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
-    paddingBottom: 10,
+    paddingTop: 20,
   },
-  button: {
+  backButton: {
     width: SCREEN.WIDTH / 3,
+  },
+  dummyView: {
+    width: 20,
   },
 });
 export default styles;
