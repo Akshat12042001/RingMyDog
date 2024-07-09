@@ -8,6 +8,7 @@ import {
   DropdownComponent,
   Header,
   Input,
+  PhoneInput,
   StyledText,
 } from '../../../components/atoms';
 import {Formik} from 'formik';
@@ -65,7 +66,7 @@ class TranferDogScreen extends Component {
           showsVerticalScrollIndicator={false}
           resetScrollToCoords={{x: 0, y: 0}}>
           <Header
-            title={'TRANSFER DOG'}
+            title={'TRANSFER DOG DETAILS'}
             isDrawerVisible
             onPress={() => this.props?.navigation?.toggleDrawer()}
           />
@@ -89,6 +90,43 @@ class TranferDogScreen extends Component {
                   {this.form.fields.map((field, index) => {
                     const fieldKey = field?.type;
 
+                    if (fieldKey === 'ownerContactNumber') {
+                      return (
+                        <PhoneInput
+                          {...field}
+                          ref={ref => (this.inputRefs[index] = ref)}
+                          onSubmitEditing={() => {
+                            this.inputRefs[index + 1]?.focus();
+                          }}
+                          returnKeyType="next"
+                          key={`field-${index}`}
+                          value={values[fieldKey]}
+                          onBlur={handleBlur(fieldKey)}
+                          placeholder={field.placeholder}
+                          onChangeText={handleChange(fieldKey)}
+                          error={touched?.[fieldKey] && errors?.[fieldKey]}
+                        />
+                      );
+                    }
+                    if (fieldKey === 'newOwnerContactNumber') {
+                      return (
+                        <PhoneInput
+                          {...field}
+                          ref={ref => (this.inputRefs[index] = ref)}
+                          onSubmitEditing={() => {
+                            this.inputRefs[index + 1]?.focus();
+                          }}
+                          returnKeyType="next"
+                          key={`field-${index}`}
+                          value={values[fieldKey]}
+                          onBlur={handleBlur(fieldKey)}
+                          placeholder={field.placeholder}
+                          onChangeText={handleChange(fieldKey)}
+                          error={touched?.[fieldKey] && errors?.[fieldKey]}
+                        />
+                      );
+                    }
+
                     if (fieldKey === 'newOwnerName') {
                       return (
                         <View>
@@ -96,7 +134,7 @@ class TranferDogScreen extends Component {
                             textAlign="center"
                             color={COLORS.SECONDARY}
                             textStyle={styles.tranferText}>
-                            Transfer to
+                            TRANSFER DETAILS TO THE FOLLOWING PERSON
                           </StyledText>
                           <Input
                             ref={ref => (this.inputRefs[index] = ref)}

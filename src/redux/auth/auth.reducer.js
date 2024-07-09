@@ -4,6 +4,7 @@ import {loginRequest, logoutRequest} from './auth.action';
 const INITIAL_STATE = {
   isLoading: false,
   isLoggedIn: false,
+  isDogBreeder: false,
 };
 
 const authSlice = createSlice({
@@ -13,6 +14,9 @@ const authSlice = createSlice({
     reset: state => {
       state.isLoading = false;
       state.isLoggedIn = false;
+    },
+    dogBreeder: (state, action) => {
+      state.isDogBreeder = action?.payload;
     },
   },
   extraReducers: builder => {
@@ -32,6 +36,7 @@ const authSlice = createSlice({
       .addCase(logoutRequest.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isLoggedIn = false;
+        state.isDogBreeder = false;
       })
       .addCase(logoutRequest.rejected, (state, action) => {
         state.isLoading = false;
@@ -39,6 +44,6 @@ const authSlice = createSlice({
   },
 });
 
-export const {reset} = authSlice.actions;
+export const {reset, dogBreeder} = authSlice.actions;
 
 export default authSlice.reducer;

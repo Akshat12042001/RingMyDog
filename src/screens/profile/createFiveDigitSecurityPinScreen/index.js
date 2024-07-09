@@ -14,6 +14,7 @@ import {View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
 import {showError, showSuccess} from '../../../utils/alerts';
+import {connect} from 'react-redux';
 
 class CreateFiveDigitSecurityPinScreen extends Component {
   constructor(props) {
@@ -36,7 +37,13 @@ class CreateFiveDigitSecurityPinScreen extends Component {
     if (this.state.otp?.join('').length === 5) {
       showSuccess('You pin is set successfully!');
       setTimeout(() => {
-        this.props.navigation.navigate(NAVIGATION.PROFILE.DOG_PROFILE);
+        if (!!this.props?.isDogBreeder) {
+          this.props.navigation.navigate(NAVIGATION.STACK.COMMON, {
+            screen: NAVIGATION.COMMON.DOG_BREEDER_SCREEN,
+          });
+        } else {
+          this.props.navigation.navigate(NAVIGATION.PROFILE.DOG_PROFILE);
+        }
       }, 1000);
     } else {
       showError('Please enter 5 digit pin');
@@ -44,6 +51,7 @@ class CreateFiveDigitSecurityPinScreen extends Component {
   };
 
   render() {
+    console.log(this.props?.isDogBreeder);
     return (
       <ScreenContainer>
         <KeyboardAwareScrollView
@@ -133,4 +141,8 @@ class CreateFiveDigitSecurityPinScreen extends Component {
     );
   }
 }
-export default CreateFiveDigitSecurityPinScreen;
+
+const mapStateToProps = state => ({
+  isDogBreeder: state?.auth?.isDogBreeder,
+});
+export default connect(mapStateToProps, {})(CreateFiveDigitSecurityPinScreen);

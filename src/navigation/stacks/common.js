@@ -3,9 +3,14 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NAVIGATION} from '../../constants';
 import config from '../config';
 import {
+  BroadcastDogScreen,
   DogBreederScreen,
+  MissingDogInformationScreen,
+  MissingDogListScreen,
+  ProfileSubmittedScreen,
   ResetSecurityPinScreen,
   ScanDogNoseScreen,
+  ThanksMessageScreen,
   TranferDogScreen,
 } from '../../screens/common';
 
@@ -27,8 +32,28 @@ export default () => {
         component={ScanDogNoseScreen}
       />
       <Stack.Screen
+        name={NAVIGATION.COMMON.MISSING_DOG_LIST_SCREEN}
+        component={MissingDogListScreen}
+      />
+      <Stack.Screen
         name={NAVIGATION.COMMON.DOG_BREEDER_SCREEN}
         component={DogBreederScreen}
+      />
+      <Stack.Screen
+        name={NAVIGATION.COMMON.BROADCAST_DOG_SCREEN}
+        component={BroadcastDogScreen}
+      />
+      <Stack.Screen
+        name={NAVIGATION.COMMON.MISSING_DOG_INFO_SCREEN}
+        component={MissingDogInformationScreen}
+      />
+      <Stack.Screen
+        name={NAVIGATION.COMMON.PROFILE_SUBMITTED_SCREEN}
+        component={ProfileSubmittedScreen}
+      />
+      <Stack.Screen
+        name={NAVIGATION.COMMON.THANKS_MESSAGE_SCREEN}
+        component={ThanksMessageScreen}
       />
     </Stack.Navigator>
   );

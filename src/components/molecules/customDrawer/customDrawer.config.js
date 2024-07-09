@@ -1,15 +1,16 @@
 import {ENUMS} from '../../../constants';
 import strings from '../../../constants/strings';
 
-export const getDrawerBasedOnUserType = isAddMoreVehcilePress => {
+export const getDrawerBasedOnUserType = isDogBreeder => {
   const DATA = [
     {
       title: strings.DRAWER.SCAN_DOGE_NOSE,
       value: ENUMS.DRAWER_VALUES.SCAN_DOGE_NOSE,
     },
+
     {
-      title: strings.DRAWER.DOG_BREEDER,
-      value: ENUMS.DRAWER_VALUES.DOG_BREEDER,
+      title: strings.DRAWER.MISSING_DOG_LIST,
+      value: ENUMS.DRAWER_VALUES.MISSING_DOG_LIST,
     },
     {
       title: strings.DRAWER.EDIT_DOG_PROFILE,
@@ -39,6 +40,16 @@ export const getDrawerBasedOnUserType = isAddMoreVehcilePress => {
       title: strings.DRAWER.LOGOUT,
       value: ENUMS.DRAWER_VALUES.LOGOUT,
     },
+    {
+      title: strings.DRAWER.THANKS_MESSAGE,
+      value: ENUMS.DRAWER_VALUES.THANKS_MESSAGE,
+    },
   ];
+  if (!!isDogBreeder) {
+    DATA.splice(1, 0, {
+      title: strings.DRAWER.DOG_BREEDER,
+      value: ENUMS.DRAWER_VALUES.DOG_BREEDER,
+    });
+  }
   return DATA;
 };

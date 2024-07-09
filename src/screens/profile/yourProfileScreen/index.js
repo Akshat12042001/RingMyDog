@@ -8,19 +8,12 @@ import {
   PhoneInput,
   ScreenContainer,
 } from '../../../components/atoms';
-import {
-  ASSETS,
-  COLORS,
-  ENUMS,
-  FORM_SCHEMA,
-  NAVIGATION,
-  STRINGS,
-} from '../../../constants';
+import {ENUMS, FORM_SCHEMA, NAVIGATION, STRINGS} from '../../../constants';
 import {Formik} from 'formik';
-import {Image, TouchableOpacity, View} from 'react-native';
+import {View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
-import {showAlert, showSuccess} from '../../../utils/alerts';
+import {showSuccess} from '../../../utils/alerts';
 
 class YourProfileScreen extends Component {
   constructor(props) {
@@ -46,6 +39,9 @@ class YourProfileScreen extends Component {
   onFormSubmit = () => {
     showSuccess('Your profile created successfully!');
     setTimeout(() => {
+      this.props.navigation.navigate(NAVIGATION.STACK.COMMON, {
+        screen: NAVIGATION.COMMON.BROADCAST_DOG_SCREEN,
+      });
       this.formRef.resetForm(this.initialValues);
     }, 2000);
   };
@@ -86,17 +82,17 @@ class YourProfileScreen extends Component {
                 <View style={styles.container}>
                   {this.form.fields.map((field, index) => {
                     const fieldKey = field?.type;
-                    if (fieldKey === 'title') {
-                      return (
-                        <DropdownComponent
-                          placeholder={field?.placeholder}
-                          data={ENUMS.TITLE_DATA}
-                          value={values[fieldKey]}
-                          onChange={text => setFieldValue('title', text?.value)}
-                          error={errors?.[fieldKey]}
-                        />
-                      );
-                    }
+                    // if (fieldKey === 'title') {
+                    //   return (
+                    //     <DropdownComponent
+                    //       placeholder={field?.placeholder}
+                    //       data={ENUMS.TITLE_DATA}
+                    //       value={values[fieldKey]}
+                    //       onChange={text => setFieldValue('title', text?.value)}
+                    //       error={errors?.[fieldKey]}
+                    //     />
+                    //   );
+                    // }
                     if (fieldKey === 'countryResidence') {
                       return (
                         <DropdownComponent

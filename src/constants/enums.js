@@ -9,7 +9,13 @@ export default {
     SCAN_DOGE_NOSE: 1,
     RESET_PIN: 4,
     DOG_BREEDER: 9,
+    MISSING_DOG_LIST: 10,
+    THANKS_MESSAGE: 11,
   },
+  USER_TYPE: [
+    {label: 'Dog owner', value: 'Dog owner'},
+    {label: 'Dog breeder', value: 'Dog breeder'},
+  ],
   COUNTRY_DATA: [
     {
       label: 'United Kingdom',

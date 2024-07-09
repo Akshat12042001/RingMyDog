@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, TouchableOpacity, Text, Image} from 'react-native';
+import {View, TouchableOpacity, Text} from 'react-native';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {ASSETS, COLORS} from '../../../constants';
+import {COLORS} from '../../../constants';
 import {SharedStyles} from '../../../shared';
 
-function DrawerItem({leftIcon, title, rightIcon = false, onPress}) {
+function DrawerItem({title, onPress}) {
   return (
     <TouchableOpacity
       style={styles.rootContainer}

@@ -22,7 +22,7 @@ const ScanDogNose = ({navigation}) => {
   return (
     <ScreenContainer>
       <Header
-        title={'DO YOU WANT TO USE SCANNER'}
+        title={'DO YOU WANT TO USE OUR BIOMETRIC DOG SCANNER?'}
         isDrawerVisible
         onPress={() => navigation?.toggleDrawer()}
       />

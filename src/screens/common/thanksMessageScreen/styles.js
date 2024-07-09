@@ -1,11 +1,7 @@
-import {SCREEN} from '../../../constants';
-
 const {StyleSheet} = require('react-native');
+const {SCREEN} = require('../../../constants');
 
 const styles = StyleSheet.create({
-  root: {
-    marginTop: 20,
-  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -16,6 +12,12 @@ const styles = StyleSheet.create({
   },
   dummyView: {
     width: 20,
+  },
+  root: {
+    marginTop: 100,
+  },
+  text: {
+    fontWeight: '700',
   },
 });
 export default styles;

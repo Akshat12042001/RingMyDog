@@ -16,6 +16,11 @@ export default {
     TRANSFER_DOG_SCREEN: 'Common-TranferDogScreen',
     SCAN_DOG_NOSE_SCREEN: 'Common-ScanDogNoseScreen',
     DOG_BREEDER_SCREEN: 'Common-DogBreederScreen',
+    MISSING_DOG_LIST_SCREEN: 'Common-MissingDogListScreen',
+    BROADCAST_DOG_SCREEN: 'Common-BroadcastDogScreen',
+    MISSING_DOG_INFO_SCREEN: 'Common-MissingDogInfoScreen',
+    PROFILE_SUBMITTED_SCREEN: 'Common-ProfileSubmittedScreen',
+    THANKS_MESSAGE_SCREEN: 'Common-ThanksMessageScreen',
   },
   STACK: {
     AUTH: 'Auth',

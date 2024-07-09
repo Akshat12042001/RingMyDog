@@ -9,3 +9,4 @@ export {default as DrawerItem} from './drawerItem';
 export {default as DropdownComponent} from './dropdown';
 export {default as OTPInput} from './otpInput';
 export {default as PhoneInput} from './phoneInput';
+export {default as MissingDogItem} from './missingDogItem';

@@ -18,6 +18,10 @@ const fields = {
     type: 'confirmPassword',
     isPassword: true,
   },
+  profileType: {
+    placeholder: STRINGS.PLACEHOLDERS.PROFILE_TYPE,
+    type: 'profileType',
+  },
   securityPin: {
     placeholder: STRINGS.PLACEHOLDERS.CREATE_FIVE_DIGIT_SECURIRY_PIN,
     type: 'securityPin',
@@ -116,6 +120,43 @@ const fields = {
     placeholder: STRINGS.PLACEHOLDERS.NEW_OWNER_ADDRESS,
     type: 'newOwnerAddress',
   },
+  fullname: {
+    placeholder: STRINGS.PLACEHOLDERS.FULLNAME,
+    type: 'fullname',
+  },
+  address: {
+    placeholder: STRINGS.PLACEHOLDERS.ADDRESS,
+    type: 'address',
+  },
+  contactNumber: {
+    placeholder: STRINGS.PLACEHOLDERS.CONTACT_NUMBER,
+    type: 'contactNumber',
+  },
+  dogBreedingBusinessName: {
+    placeholder: STRINGS.PLACEHOLDERS.NAME_OF_DOG_BREEDING_BUSINESS,
+    type: 'dogBreedingBusinessName',
+  },
+  dogBreedingBusinessAddress: {
+    placeholder: STRINGS.PLACEHOLDERS.ADDRESS_OF_DOG_BREEDING_BUSINESS,
+    type: 'dogBreedingBusinessAddress',
+  },
+  dogMissingDate: {
+    placeholder: STRINGS.PLACEHOLDERS.DOG_MISSING_DATE,
+    type: 'dogMissingDate',
+    editable: false,
+  },
+  dogMissingCountry: {
+    placeholder: STRINGS.PLACEHOLDERS.DOG_MISSING_COUNTRY,
+    type: 'dogMissingCountry',
+  },
+  dogMissingArea: {
+    placeholder: STRINGS.PLACEHOLDERS.DOG_MISSING_AREA,
+    type: 'dogMissingArea',
+  },
+  dogMissingCircumstances: {
+    placeholder: STRINGS.PLACEHOLDERS.DOG_MISSING_CIRCUMSTANCES,
+    type: 'dogMissingCircumstances',
+  },
 };
 
 const schemas = {
@@ -157,9 +198,15 @@ const schemas = {
 
 export default {
   SIGN_UP: {
-    fields: [fields.userName, fields.password, fields.confirmPassword],
+    fields: [
+      fields.userName,
+      fields.profileType,
+      fields.password,
+      fields.confirmPassword,
+    ],
     schema: Yup.object().shape({
       userName: schemas.stringRequired,
+      profileType: schemas.stringRequired,
       password: schemas.password,
       confirmPassword: schemas.passwordConfirm,
     }),
@@ -248,6 +295,38 @@ export default {
       newOwnerName: schemas.stringRequired,
       newOwnerContactNumber: schemas.stringRequired,
       newOwnerAddress: schemas.stringRequired,
+    }),
+  },
+  DOG_BREEDER: {
+    fields: [
+      fields.title,
+      fields.fullname,
+      fields.address,
+      fields.contactNumber,
+      fields.dogBreedingBusinessName,
+      fields.dogBreedingBusinessAddress,
+    ],
+    schema: Yup.object().shape({
+      title: schemas.stringRequired,
+      fullname: schemas.stringRequired,
+      address: schemas.stringRequired,
+      contactNumber: schemas.stringRequired,
+      dogBreedingBusinessName: schemas.stringRequired,
+      dogBreedingBusinessAddress: schemas.stringRequired,
+    }),
+  },
+  DOG_MISSING_SCREEN: {
+    fields: [
+      fields.dogMissingDate,
+      fields.dogMissingCountry,
+      fields.dogMissingArea,
+      fields.dogMissingCircumstances,
+    ],
+    schema: Yup.object().shape({
+      dogMissingDate: schemas.stringRequired,
+      dogMissingCountry: schemas.stringRequired,
+      dogMissingArea: schemas.stringRequired,
+      dogMissingCircumstances: schemas.stringRequired,
     }),
   },
 };

@@ -8,7 +8,13 @@ const DogBreederItemCard = ({
   image = '',
   dogName = '',
   dogAge = '',
-  dogPrice = '',
+  dogBreed = '',
+  dogMark = '',
+  dogMissingDate = '',
+  dogMissingCountry = '',
+  dogMissingArea = '',
+  dogCircumstances = '',
+  onPress = undefined,
 }) => {
   return (
     <View style={styles.root}>
@@ -18,26 +24,56 @@ const DogBreederItemCard = ({
           style={styles.imageContainer}
           resizeMode="contain"
         />
-        <Button title="Contact" />
+        <Button title="PROFILE" onPress={onPress} />
       </View>
       <View style={styles.itemContainer}>
         <View style={styles.itemSubContainer}>
           <StyledText textStyle={styles.text} color={COLORS.SECONDARY}>
-            {'Dog Name : '}
+            {'Dog name : '}
           </StyledText>
           <StyledText color={COLORS.SECONDARY}>{dogName}</StyledText>
         </View>
         <View style={styles.itemSubContainer}>
           <StyledText textStyle={styles.text} color={COLORS.SECONDARY}>
-            {'Dog Age : '}
+            {'Dog age : '}
           </StyledText>
           <StyledText color={COLORS.SECONDARY}>{dogAge}</StyledText>
         </View>
         <View style={styles.itemSubContainer}>
           <StyledText textStyle={styles.text} color={COLORS.SECONDARY}>
-            {'Dog Price : '}
+            {'Dog breed : '}
           </StyledText>
-          <StyledText color={COLORS.SECONDARY}>{dogPrice}</StyledText>
+          <StyledText color={COLORS.SECONDARY}>{dogBreed}</StyledText>
+        </View>
+        <View style={{}}>
+          <StyledText textStyle={styles.text} color={COLORS.SECONDARY}>
+            {'Any special mark'}
+          </StyledText>
+          <StyledText color={COLORS.SECONDARY}>{dogMark}</StyledText>
+        </View>
+        <View style={{}}>
+          <StyledText textStyle={styles.text} color={COLORS.SECONDARY}>
+            {'Dog missing date'}
+          </StyledText>
+          <StyledText color={COLORS.SECONDARY}>{dogMissingDate}</StyledText>
+        </View>
+        <View style={{}}>
+          <StyledText textStyle={styles.text} color={COLORS.SECONDARY}>
+            {'Country where dog missing'}
+          </StyledText>
+          <StyledText color={COLORS.SECONDARY}>{dogMissingCountry}</StyledText>
+        </View>
+        <View style={{}}>
+          <StyledText textStyle={styles.text} color={COLORS.SECONDARY}>
+            {'Area where dog missing'}
+          </StyledText>
+          <StyledText color={COLORS.SECONDARY}>{dogMissingArea}</StyledText>
+        </View>
+        <View style={{}}>
+          <StyledText textStyle={styles.text} color={COLORS.SECONDARY}>
+            {'Circumstances how dog get missing'}
+          </StyledText>
+          <StyledText color={COLORS.SECONDARY}>{dogCircumstances}</StyledText>
         </View>
       </View>
     </View>

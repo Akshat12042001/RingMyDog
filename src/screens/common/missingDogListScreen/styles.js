@@ -1,11 +1,7 @@
-import {SCREEN} from '../../../constants';
-
 const {StyleSheet} = require('react-native');
+const {SCREEN} = require('../../../constants');
 
 const styles = StyleSheet.create({
-  root: {
-    marginTop: 20,
-  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -18,4 +14,5 @@ const styles = StyleSheet.create({
     width: 20,
   },
 });
+
 export default styles;

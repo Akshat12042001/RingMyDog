@@ -1,18 +1,27 @@
 import React, {Component} from 'react';
 import {
   Button,
+  DropdownComponent,
   Footer,
   Header,
   Input,
   ScreenContainer,
   StyledText,
 } from '../../../components/atoms';
-import {COLORS, FORM_SCHEMA, NAVIGATION, STRINGS} from '../../../constants';
+import {
+  COLORS,
+  ENUMS,
+  FORM_SCHEMA,
+  NAVIGATION,
+  STRINGS,
+} from '../../../constants';
 import {Formik} from 'formik';
 import {View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
 import {showSuccess} from '../../../utils/alerts';
+import {connect} from 'react-redux';
+import {dogBreeder} from '../../../redux/auth/auth.reducer';
 
 class SignUpScreen extends Component {
   constructor(props) {
@@ -22,13 +31,19 @@ class SignUpScreen extends Component {
       userName: '',
       password: '',
       confirmPassword: '',
+      profileType: '',
     };
 
     this.formRef = null;
     this.form = FORM_SCHEMA.SIGN_UP;
     this.inputRefs = this.form.fields.map(() => null);
   }
-  onFormSubmit = () => {
+  onFormSubmit = values => {
+    if (values?.profileType === 'Dog breeder') {
+      this.props?.dogBreeder(true);
+    } else if (values?.profileType === 'Dog owner') {
+      this.props?.dogBreeder(false);
+    }
     showSuccess('Please login to continue!');
     setTimeout(() => {
       this.props.navigation.navigate(NAVIGATION.AUTH.LOGIN_SCREEN);
@@ -60,11 +75,25 @@ class SignUpScreen extends Component {
               values,
               errors,
               touched,
+              setFieldValue,
             }) => {
               return (
                 <View style={styles.container}>
                   {this.form.fields.map((field, index) => {
                     const fieldKey = field?.type;
+                    if (fieldKey === 'profileType') {
+                      return (
+                        <DropdownComponent
+                          placeholder={field?.placeholder}
+                          data={ENUMS.USER_TYPE}
+                          value={values[fieldKey]}
+                          onChange={text =>
+                            setFieldValue('profileType', text?.value)
+                          }
+                          error={errors?.[fieldKey]}
+                        />
+                      );
+                    }
                     return (
                       <Input
                         {...field}
@@ -112,4 +141,6 @@ class SignUpScreen extends Component {
     );
   }
 }
-export default SignUpScreen;
+
+const mapStateToProps = state => ({});
+export default connect(mapStateToProps, {dogBreeder})(SignUpScreen);

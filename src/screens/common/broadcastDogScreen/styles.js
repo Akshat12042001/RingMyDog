@@ -5,6 +5,7 @@ const {StyleSheet} = require('react-native');
 const styles = StyleSheet.create({
   root: {
     marginTop: 20,
+    flex: 1,
   },
   buttonContainer: {
     flexDirection: 'row',
