@@ -23,7 +23,7 @@ export default StyleSheet.create({
     color: COLORS.SECONDARY,
   },
   dummyView: {
-    borderBottomWidth: 1,
+    // borderBottomWidth: 1,
     width: 8,
     position: 'absolute',
   },

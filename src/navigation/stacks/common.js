@@ -7,6 +7,8 @@ import {
   DogBreederScreen,
   MissingDogInformationScreen,
   MissingDogListScreen,
+  NotificationScreen,
+  ProfileMatchedScreen,
   ProfileSubmittedScreen,
   ResetSecurityPinScreen,
   ScanDogNoseScreen,
@@ -54,6 +56,14 @@ export default () => {
       <Stack.Screen
         name={NAVIGATION.COMMON.THANKS_MESSAGE_SCREEN}
         component={ThanksMessageScreen}
+      />
+      <Stack.Screen
+        name={NAVIGATION.COMMON.PROFILE_MATCHED_SCREEN}
+        component={ProfileMatchedScreen}
+      />
+      <Stack.Screen
+        name={NAVIGATION.COMMON.NOTIFICATION_SCREEN}
+        component={NotificationScreen}
       />
     </Stack.Navigator>
   );

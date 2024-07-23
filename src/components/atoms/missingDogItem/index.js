@@ -5,9 +5,9 @@ import StyledText from '../styledText';
 import {COLORS} from '../../../constants';
 import {SharedStyles} from '../../../shared';
 
-const MissingDogItem = ({title = '', value = ''}) => {
+const MissingDogItem = ({title = '', value = '', containerStyle = {}}) => {
   return (
-    <View style={styles.itemSubContainer}>
+    <View style={[styles.itemSubContainer, containerStyle]}>
       <StyledText
         textStyle={styles.text}
         textAlign="center"

@@ -21,6 +21,8 @@ export default {
     MISSING_DOG_INFO_SCREEN: 'Common-MissingDogInfoScreen',
     PROFILE_SUBMITTED_SCREEN: 'Common-ProfileSubmittedScreen',
     THANKS_MESSAGE_SCREEN: 'Common-ThanksMessageScreen',
+    PROFILE_MATCHED_SCREEN: 'Common-ProfileMatchedScreen',
+    NOTIFICATION_SCREEN: 'Common-NotificationScreen',
   },
   STACK: {
     AUTH: 'Auth',

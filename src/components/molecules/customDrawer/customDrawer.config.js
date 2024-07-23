@@ -7,7 +7,10 @@ export const getDrawerBasedOnUserType = isDogBreeder => {
       title: strings.DRAWER.SCAN_DOGE_NOSE,
       value: ENUMS.DRAWER_VALUES.SCAN_DOGE_NOSE,
     },
-
+    {
+      title: strings.DRAWER.NOTIFICATION,
+      value: ENUMS.DRAWER_VALUES.NOTIFICATION,
+    },
     {
       title: strings.DRAWER.MISSING_DOG_LIST,
       value: ENUMS.DRAWER_VALUES.MISSING_DOG_LIST,

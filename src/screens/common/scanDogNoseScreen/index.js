@@ -7,7 +7,7 @@ import {
 } from '../../../components/atoms';
 import {View} from 'react-native';
 import {Camera, useCameraDevice} from 'react-native-vision-camera';
-import {SCREEN} from '../../../constants';
+import {NAVIGATION, SCREEN} from '../../../constants';
 import {showSuccess} from '../../../utils/alerts';
 
 const ScanDogNose = ({navigation}) => {
@@ -16,8 +16,8 @@ const ScanDogNose = ({navigation}) => {
   const onScanPress = () => {
     showSuccess('Your dog scanned successfully');
     setTimeout(() => {
-      navigation.goBack();
-    }, 1000);
+      navigation.navigate(NAVIGATION.COMMON.PROFILE_MATCHED_SCREEN);
+    }, 1500);
   };
   return (
     <ScreenContainer>

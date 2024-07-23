@@ -11,6 +11,7 @@ export default {
     DOG_BREEDER: 9,
     MISSING_DOG_LIST: 10,
     THANKS_MESSAGE: 11,
+    NOTIFICATION: 12,
   },
   USER_TYPE: [
     {label: 'Dog owner', value: 'Dog owner'},

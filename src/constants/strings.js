@@ -312,6 +312,8 @@ export default {
     SUBMIT: 'SUBMIT',
     BIOMETRIC: 'BIOMETRIC DOG BREED SCANNER ',
     SAVE: 'SAVE',
+    CONTACT: 'CONTACT',
+    TRACK: 'TRACK',
   },
   PLACEHOLDERS: {
     YOU_AGREE_TO_OUR: ' By creating your account, you agree to our',
@@ -569,6 +571,8 @@ export default {
     RESET_PIN: 'Reset five digit security pin',
     DOG_BREEDER: 'Dog breeder',
     MISSING_DOG_LIST: 'Broadcast missing dog list',
-    THANKS_MESSAGE: 'Send thanks message to RMD family',
+    THANKS_MESSAGE:
+      'Send thanks message to the ring my dog-the wanted poster app community',
+    NOTIFICATION: 'Notification',
   },
 };

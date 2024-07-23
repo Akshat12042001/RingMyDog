@@ -100,6 +100,11 @@ const CustomDrawer = ({navigation}) => {
           screen: NAVIGATION.COMMON.THANKS_MESSAGE_SCREEN,
         });
         break;
+      case ENUMS.DRAWER_VALUES.NOTIFICATION:
+        navigation.navigate(NAVIGATION.STACK.COMMON, {
+          screen: NAVIGATION.COMMON.NOTIFICATION_SCREEN,
+        });
+        break;
     }
   };
 

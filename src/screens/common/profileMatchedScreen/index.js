@@ -9,26 +9,20 @@ import {
 } from '../../../components/atoms';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {Image, View} from 'react-native';
-import {ASSETS, COLORS, NAVIGATION, STRINGS} from '../../../constants';
+import {ASSETS, COLORS, STRINGS} from '../../../constants';
 import styles from './styles';
-import {showSuccess} from '../../../utils/alerts';
+import {openPhone} from '../../../utils/linking';
 
-class MissingDogInformationScreen extends Component {
+class ProfileMatchedScreen extends Component {
   constructor(props) {
     super(props);
   }
 
   onSubmitPress = () => {
-    showSuccess('Your form submitted successfully');
-    setTimeout(() => {
-      this.props.navigation.navigate(NAVIGATION.STACK.COMMON, {
-        screen: NAVIGATION.COMMON.BROADCAST_DOG_SCREEN,
-      });
-    }, 1000);
+    openPhone('+44-98150034580');
   };
 
   render() {
-    const data = this.props?.route?.params;
     return (
       <ScreenContainer>
         <KeyboardAwareScrollView
@@ -41,7 +35,7 @@ class MissingDogInformationScreen extends Component {
           showsVerticalScrollIndicator={false}
           resetScrollToCoords={{x: 0, y: 0}}>
           <Header
-            title={'YOUR MISSING DOG PROFILE HAS BEEN SUBMITTED'}
+            title={'DOG PROFILE MATCHED'}
             isDrawerVisible
             onPress={() => this.props?.navigation?.toggleDrawer()}
           />
@@ -60,19 +54,19 @@ class MissingDogInformationScreen extends Component {
             />
             <MissingDogItem
               title="Dog missing date"
-              value={data?.dogMissingDate}
+              value={'17, November, 2023'}
             />
             <MissingDogItem
               title="Country where dog is missing"
-              value={data?.dogMissingCountry}
+              value={'United Kingdom'}
             />
             <MissingDogItem
               title="Area where dog is missing"
-              value={data?.dogMissingArea}
+              value={'CA, road 21, London'}
             />
             <MissingDogItem
               title="Circumstances how dog get missing"
-              value={data?.dogMissingCircumstances}
+              value={'When dog is going to park'}
             />
             <View style={styles.dogImagesContainer}>
               <Image
@@ -130,7 +124,7 @@ class MissingDogInformationScreen extends Component {
             />
             <View style={styles.dummyView} />
             <Button
-              title={STRINGS.BUTTON_LABELS.SUBMIT}
+              title={STRINGS.BUTTON_LABELS.CONTACT}
               containerStyles={styles.backButton}
               onPress={this.onSubmitPress}
             />
@@ -141,4 +135,4 @@ class MissingDogInformationScreen extends Component {
     );
   }
 }
-export default MissingDogInformationScreen;
+export default ProfileMatchedScreen;

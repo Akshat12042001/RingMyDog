@@ -7,3 +7,5 @@ export {default as BroadcastDogScreen} from './broadcastDogScreen';
 export {default as MissingDogInformationScreen} from './missingDogInformationScreen';
 export {default as ProfileSubmittedScreen} from './profileSubmittedScreen';
 export {default as ThanksMessageScreen} from './thanksMessageScreen';
+export {default as ProfileMatchedScreen} from './profileMatchedScreen';
+export {default as NotificationScreen} from './notificationScreen';
